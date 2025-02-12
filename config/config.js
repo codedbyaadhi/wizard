@@ -249,44 +249,63 @@ What truly stands out is how it simplifies creating high-performance animations.
 export const FooterLinks = [
   [
     {
-      name: "Features",
-      link: "/",
+      title: "Features",
+      key: "features",
+      path: "/features",
     },
     {
-      name: "About",
-      link: "/",
+      title: "Integrations",
+      key: "integrations",
+      path: "/integrations",
     },
     {
-      name: "Updates",
-      link: "/",
+      title: "Pricing",
+      key: "pricing",
+      path: "/pricing",
+    },
+    {
+      title: "Changelog",
+      key: "changelog",
+      path: "/changelog",
+    },
+    {
+      title: "Roadmap",
+      key: "roadmap",
+      path: "/roadmap",
     },
   ],
   [
     {
-      name: "Pricing",
-      link: "/",
+      title: "Our team",
+      key: "our-team",
+      path: "/our-team",
     },
     {
-      name: "Docs",
-      link: "/",
+      title: "Our values",
+      key: "our-values",
+      path: "/our-values",
     },
     {
-      name: "Contact Us",
-      link: "/",
+      title: "Blog",
+      key: "blog",
+      path: "/blog",
     },
   ],
   [
     {
-      name: "Sign up",
-      link: "/",
+      title: "Documentation",
+      key: "documentation",
+      path: "/documentation",
     },
     {
-      name: "Login",
-      link: "/",
+      title: "Terms",
+      key: "terms",
+      path: "/terms",
     },
     {
-      name: "Subscriptions",
-      link: "/",
+      title: "Contact",
+      key: "contact",
+      path: "/contact",
     },
   ],
 ];
