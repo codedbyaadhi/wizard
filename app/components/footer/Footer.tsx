@@ -48,6 +48,29 @@ const Footer = () => {
         </div>
         <div className="flex w-[520px] h-[412px] border"></div>
       </div>
+      <div className="flex w-[1235px] h-[280px] border items-center justify-between relative top-56">
+        <div className="flex flex-col items-center justify-evenly w-[490px] h-full border">
+          <div className="flex items-start w-full">
+            <div className="flex items-center justify-center gap-2">
+              {/* The wizard logo  */}
+              <div className="flex items-center justify-center w-[48px] h-[48px] border border-white/10 bg-[#0B080F] rounded-xl">
+                <div className="flex items-center justify-center w-[40px] h-[40px] border border-white/5 bg-[#100b2841] rounded-[7px]"></div>
+              </div>
+              <h3 className="text-[25px] font-aeonic opacity-70">Wizard</h3>
+            </div>
+          </div>
+          <p className="text-white text-sm font-inter opacity-40">
+            Bring your dreams to life and transform them into a mesmerizing,
+            absolute reality with the unparalleled magic of Wizard UI's
+            innovative technology
+            <br />
+            <br />
+            <br />
+            Copyright © 2024 Emblem. All rights reserved.
+          </p>
+        </div>
+        <div className="flex w-[725px] h-full border"></div>
+      </div>
     </footer>
   );
 };
