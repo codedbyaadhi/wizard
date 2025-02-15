@@ -32,7 +32,7 @@ const Ellipse = () => {
           >
             <div className="absolute w-[50px] h-[800px] bg-gradient-to-r from-transparent to-white rounded-l-full"></div>
           </motion.div>
-          <div className="flex flex-col items-center bg-gradient-to-b from-[#060019] via-[#040313] to-[#040313] w-[500px] h-[500px] rounded-t-full relative top-[0.5px] scale-[1.0015] shadow-md"></div>
+          <div className="flex flex-col items-center bg-gradient-to-b from-[#080A1E] via-[#040313] to-[#040313] w-[500px] h-[500px] rounded-t-full relative top-[0.5px] scale-[1.0015] shadow-md"></div>
         </div>
       </div>
     </div>

@@ -1,103 +1,52 @@
 "use client";
-import type React from "react";
-import { useState } from "react";
-import { FooterLinks } from "@/config/config";
+import { Send } from "lucide-react";
 import Link from "next/link";
+import React from "react";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    window.location.href = `mailto:aadhicodes.dev@gmail.com?subject=New Subscription&body=Email: ${email}`;
-  };
-
   return (
-    <footer className="flex items-center justify-center bg-gradient-to-b from-[#040313] to-[#040313] text-white py-20 w-full absolute top-[7330px] overflow-hidden font-inter">
-      <div
-        className="flex absolute w-[1250px] h-[250px] bg-[#144AF2] rounded-full 
-                blur-3xl opacity-40 shadow-[0_0_200px_#144AF2] top-[600px] -z-0"
-      ></div>
-
-      <div className="mx-auto w-[1440px] px-24">
-        <div className="flex justify-between items-start mb-16">
-          <div className="w-[180px]">
-            <div className="w-full h-[120px] border border-white/10 rounded-lg flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors duration-300">
-              {/* Add your logo here */}
-              <span className="text-2xl font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
-                Logo
-              </span>
+    <footer className="flex flex-col items-center absolute top-[6805px] w-full h-[1176px] border">
+      <div className="flex items-center justify-between w-[1235px] h-[415px] rounded-[19px] relative top-36 shadow-md bg-gradient-to-b from-[#7D5AF8] to-[#4A3592]">
+        <div className="flex flex-col items-start justify-between w-[565px] h-[240px] relative left-12">
+          <h3 className="text-white text-[45px] font-aeonic font-medium">
+            Get started with Wizard
+          </h3>
+          <p className="text-white text-sm font-inter opacity-60">
+            Dive deep into front-end development effortlessly and unlock the
+            power of smooth, interactive experiences with Wizard. Enhance your
+            app with stunning, pre-built animations that bring your UI to life!
+          </p>
+          <div className="flex items-start justify-start w-full h-[60px] gap-3">
+            {/* The call to action buttons  */}
+            <div className="flex items-center justify-center border border-white/10 w-[237px] h-full rounded-[15px] shadow-md p-1">
+              <div className="flex items-center justify-center w-full h-[50px] rounded-[11px] shadow-md bg-white px-4">
+                <div className="flex items-center justify-center gap-2 font-aeonic text-[#5D37D5] font-medium">
+                  <p>Press</p>
+                  <div className="flex items-center justify-center w-[30px] h-[22px] rounded bg-[#957be7] shadow-md px-1">
+                    <div className="flex items-center justify-center w-[29px] h-[18px] rounded bg-[#8B6AFD] shadow-md">
+                      <p className="text-[13px] text-white">B</p>
+                    </div>
+                  </div>
+                  <p>to book a call</p>
+                </div>
+              </div>
+            </div>
+            {/* The second button CTA  */}
+            <div className="flex items-center justify-center border border-white/10 w-[187px] h-full rounded-[15px] shadow-md p-1">
+              <div className="flex items-center justify-center w-full h-[50px] rounded-[11px] shadow-md bg-[#7557e1] px-4">
+                <div className="flex items-center justify-center gap-2 font-aeonic text-white font-medium">
+                  <div className="flex items-center justify-center w-[30px] h-[22px] rounded bg-[#957be7] shadow-md px-1">
+                    <div className="flex items-center justify-center w-[29px] h-[18px] rounded bg-[#8C6AFC] shadow-md">
+                      <Send size={13} />
+                    </div>
+                  </div>
+                  <p>Contact Us</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="flex gap-24">
-            {FooterLinks.map((section, index) => (
-              <div key={index}>
-                <ul className="space-y-5">
-                  {section.map((link) => (
-                    <li key={link.key}>
-                      <Link
-                        href={link.path}
-                        className="text-[#EFEDFD] opacity-60 hover:opacity-100 transition-all duration-200 font-light text-[15px] hover:translate-x-1 inline-block"
-                      >
-                        {link.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
         </div>
-
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-12" />
-
-        <div className="flex justify-between items-center gap-8">
-          <div className="max-w-[500px]">
-            <h4 className="text-2xl bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent font-medium mb-3 font-inter">
-              Looking to acquire a component?
-            </h4>
-            <p className="text-[15px] text-white/40 font-light leading-relaxed">
-              Request your desired component and we'll help bring your vision to
-              life.
-            </p>
-          </div>
-          <form onSubmit={handleSubmit} className="flex space-x-3 w-[480px]">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-transparent border border-white/10 text-white placeholder-white/40 flex-grow px-5 py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#251b70] hover:bg-[#0B0821] transition-all duration-200 ease-in-out outline-none"
-              required
-            />
-            <button
-              type="submit"
-              className="bg-gradient-to-b from-[#144cf270] to-[#144cf213] px-6 rounded-lg hover:bg-[#120C33] transition-all border border-white/10 font-medium flex items-center justify-center py-2 group font-inter"
-            >
-              <span>Request</span>
-            </button>
-          </form>
-        </div>
-
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-12" />
-
-        <div className="flex justify-between items-center text-sm text-white/40">
-          <p>Wizard UI, LLC. All rights reserved.</p>
-          <div className="flex gap-8">
-            <Link
-              href="/privacy"
-              className="hover:text-white/60 transition-colors duration-200"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="hover:text-white/60 transition-colors duration-200"
-            >
-              Terms of Service
-            </Link>
-          </div>
-        </div>
+        <div className="flex w-[520px] h-[412px] border"></div>
       </div>
     </footer>
   );
