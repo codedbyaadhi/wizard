@@ -10,7 +10,7 @@ import Footer from "../footer/Footer";
 
 const Origin = () => {
   return (
-    <div className="flex flex-col items-center w-full h-[7981px] bg-[#040313]">
+    <div className="flex flex-col items-center w-full h-[7981px] bg-[#040313] overflow-hidden">
       <LightRays stagger={true} />
       <Badge />
       <Hero />

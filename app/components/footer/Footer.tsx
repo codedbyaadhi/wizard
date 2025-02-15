@@ -1,13 +1,16 @@
 "use client";
 import { Send } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import wizard from "@/svg/footer/wizard.svg";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center absolute top-[6805px] w-full h-[1176px] border">
-      <div className="flex items-center justify-between w-[1235px] h-[415px] rounded-[19px] relative top-36 shadow-md bg-gradient-to-b from-[#7D5AF8] to-[#4A3592]">
-        <div className="flex flex-col items-start justify-between w-[565px] h-[240px] relative left-12">
+    <footer className="absolute top-[6800px] w-full min-h-screen flex flex-col items-center justify-between py-20 overflow-hidden bg-[#050213]">
+      {/* Top CTA Section */}
+      <div className="flex items-center justify-between max-w-[1235px] w-full h-[415px] rounded-[19px] shadow-md bg-gradient-to-b from-[#7D5AF8] to-[#4A3592] px-12">
+        <div className="flex flex-col items-start justify-between max-w-[565px] h-[240px]">
           <h3 className="text-white text-[45px] font-aeonic font-medium">
             Get started with Wizard
           </h3>
@@ -46,10 +49,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex w-[520px] h-[412px] border"></div>
+        <div className="flex w-[520px] h-[412px]"></div>
       </div>
-      <div className="flex w-[1235px] h-[280px] items-center justify-between relative top-56">
-        <div className="flex flex-col items-center justify-evenly w-[490px] h-full">
+
+      {/* Middle Section - Links and Info */}
+      <div className="flex max-w-[1235px] w-full h-[280px] items-start justify-between mt-20 px-4">
+        {/* Logo and Description Section */}
+        <div className="flex flex-col items-start justify-between w-[490px] h-full space-y-8">
           <div className="flex items-start w-full">
             <div className="flex items-center justify-center gap-2">
               {/* The wizard logo  */}
@@ -69,7 +75,9 @@ const Footer = () => {
             Copyright © 2024 Emblem. All rights reserved.
           </p>
         </div>
-        <div className="flex w-[725px] items-center justify-end gap-28 h-full font-inter">
+
+        {/* Links Section */}
+        <div className="flex w-[725px] items-start justify-end gap-28 h-full font-inter">
           <div className="col-span-1">
             <h3 className="text-white text-lg font-normal mb-6">Quick Links</h3>
             <ul className="space-y-4">
@@ -186,6 +194,20 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+      </div>
+
+      {/* Gradient Line */}
+      <div className="w-full max-w-[1230px] h-[1.5px] bg-gradient-to-r from-transparent via-[#978eff50] to-transparent mt-20"></div>
+
+      {/* Bottom Image */}
+      <div className="w-full max-w-[1230px] flex items-center justify-center mt-20 overflow-hidden">
+        <Image
+          src={wizard}
+          alt="wizard ui"
+          draggable="false"
+          width={1392}
+          height={100}
+        />
       </div>
     </footer>
   );
