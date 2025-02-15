@@ -48,8 +48,8 @@ const Footer = () => {
         </div>
         <div className="flex w-[520px] h-[412px] border"></div>
       </div>
-      <div className="flex w-[1235px] h-[280px] border items-center justify-between relative top-56">
-        <div className="flex flex-col items-center justify-evenly w-[490px] h-full border">
+      <div className="flex w-[1235px] h-[280px] items-center justify-between relative top-56">
+        <div className="flex flex-col items-center justify-evenly w-[490px] h-full">
           <div className="flex items-start w-full">
             <div className="flex items-center justify-center gap-2">
               {/* The wizard logo  */}
@@ -69,7 +69,123 @@ const Footer = () => {
             Copyright © 2024 Emblem. All rights reserved.
           </p>
         </div>
-        <div className="flex w-[725px] h-full border"></div>
+        <div className="flex w-[725px] items-center justify-end gap-28 h-full font-inter">
+          <div className="col-span-1">
+            <h3 className="text-white text-lg font-normal mb-6">Quick Links</h3>
+            <ul className="space-y-4">
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  How it works
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Who we serve
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  FAQs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="col-span-1">
+            <h3 className="text-white text-lg font-medium mb-6">Legal</h3>
+            <ul className="space-y-4">
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Terms of Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Cookies Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Affiliate Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Media */}
+          <div className="col-span-1">
+            <h3 className="text-white text-lg font-medium mb-6">Socials</h3>
+            <ul className="space-y-4">
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  LinkedIn
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Github
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Discord
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Instagram
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
   );
