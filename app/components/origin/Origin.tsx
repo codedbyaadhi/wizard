@@ -6,7 +6,7 @@ import Hero from "@/app/components/hero/Hero";
 import Brands from "@/app/components/brands/Brands";
 import HeroClip from "@/app/components/heroclip/HeroClip";
 import Section from "@/app/components/section/Section";
-import Footer from "../footer/Footer";
+import Bentogrid from "../bentogrids/Bentogrid";
 
 const Origin = () => {
   return (
@@ -17,7 +17,7 @@ const Origin = () => {
       <HeroClip />
       <Brands />
       <Section />
-      <Footer />
+      <Bentogrid />
     </div>
   );
 };
