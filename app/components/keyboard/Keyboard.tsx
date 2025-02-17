@@ -1,6 +1,14 @@
 import React from "react";
 
-const keys = [
+interface KeyType {
+  specialChar?: boolean;
+  char?: string;
+  keyname: string;
+  width: number;
+  height: number;
+}
+
+const keys: KeyType[][] = [
   [
     {
       specialChar: false,
