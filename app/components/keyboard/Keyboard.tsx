@@ -1,131 +1,621 @@
-/*
-  This component renders a visual representation of a keyboard.
-  It is designed with a combination of dynamic keys and static elements,
-  styled using Tailwind CSS and responsive gradient effects.
-  Each key is generated dynamically based on the specified rows and gaps.
-*/
-
 import React from "react";
+
+const keys = [
+  [
+    {
+      specialChar: false,
+      keyname: "esc",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "!",
+      keyname: "1",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "@",
+      keyname: "2",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "#",
+      keyname: "3",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "$",
+      keyname: "4",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "%",
+      keyname: "5",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "^",
+      keyname: "6",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "&",
+      keyname: "7",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "*",
+      keyname: "8",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "(",
+      keyname: "9",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: ")",
+      keyname: "0",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "-",
+      keyname: "-",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "=",
+      keyname: "=",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      char: "",
+      keyname: "Backspace",
+      width: 110,
+      height: 43,
+    },
+  ],
+  [
+    {
+      specialChar: false,
+      char: "tab",
+      keyname: "tab",
+      width: 77,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "Q",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "W",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "E",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "R",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "T",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "Y",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "U",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "I",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "O",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "P",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "{",
+      keyname: "[",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "}",
+      keyname: "]",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "|",
+      keyname: "\\",
+      width: 73,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "Pgup",
+      width: 43,
+      height: 43,
+    },
+  ],
+  [
+    {
+      specialChar: false,
+      keyname: "Capslock",
+      width: 77,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "A",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "S",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "D",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "F",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "G",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "H",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "J",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "K",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "L",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: ";",
+      keyname: ";",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "'",
+      keyname: "'",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "Return",
+      width: 120,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "PgDn",
+      width: 43,
+      height: 43,
+    },
+  ],
+  [
+    {
+      specialChar: false,
+      keyname: "Shift",
+      width: 100,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "Z",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "X",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "C",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "V",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "B",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "N",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "M",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "<",
+      keyname: ",",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: ">",
+      keyname: ".",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: true,
+      char: "?",
+      keyname: "/",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "Shift",
+      width: 100,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "▲",
+      width: 43,
+      height: 43,
+    },
+    {
+      specialChar: false,
+      keyname: "Fn",
+      width: 43,
+      height: 43,
+    },
+  ],
+  [
+    { keyname: "^", width: 43, height: 43 },
+    { keyname: "⌘", width: 43, height: 43 },
+    { keyname: "⌥", width: 43, height: 43 },
+    { keyname: "", width: 380, height: 43 },
+    { keyname: "⌥", width: 43, height: 43 },
+  ],
+  [
+    { keyname: "◄", width: 43, height: 43 },
+    { keyname: "▼", width: 43, height: 43 },
+    { keyname: "►", width: 43, height: 43 },
+  ],
+];
 
 const Keyboard = () => {
   return (
-    <div className="flex items-center justify-center w-[799px] h-[295px] bg-gradient-to-b from-[#151326] to-[#100F1C] rounded-[7px] shadow-md">
-      <div className="flex flex-col items-center justify-center w-[796px] h-[292px] bg-[#080714] rounded-[7px] gap-[7px]">
-        <div className="flex w-[774px] h-[50px] items-center justify-center gap-[10px]">
-          {Array.from({ length: 13 }).map((key, idx) => {
-            return (
+    <div className="flex flex-col items-center justify-center gap-1 w-[789px] h-[253px] bg-gradient-to-b from-[#010515] to-[#121421] rounded-b-[20px] border-b border-[#ffffff09] border-l border-r">
+      <div className="flex items-center justify-evenly gap-1">
+        {keys[0].map((key, index) => {
+          return (
+            <div
+              key={index}
+              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+              style={{
+                width: `${key.width}px`,
+                height: `${key.height}px`,
+              }}
+            >
               <div
-                className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666616] w-[43px] h-[43px] rounded-[4px] shadow-md"
-                key={idx}
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                style={{
+                  width: `${key.width - 1.5}px`,
+                  height: `${key.height - 1.8}px`,
+                }}
               >
-                <div className="bg-[#090915] w-[41.7px] h-[41.7px] relative top-[0.3px] rounded-[3px]"></div>
+                {key.specialChar ? (
+                  <>
+                    <span className="text-[10px] opacity-20 font-inter">
+                      {key.char}
+                    </span>
+                    <span className="text-[8px] opacity-20 font-inter">
+                      {key.keyname}
+                    </span>
+                  </>
+                ) : (
+                  <span className="text-[10px] opacity-20 font-inter">
+                    {key.keyname}
+                  </span>
+                )}
               </div>
-            );
-          })}
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666610] w-[75px] h-[43px] rounded-[4px] shadow-md">
-            <div className="flex items-center justify-center bg-[#090915] w-[74px] h-[41.5px] rounded-[4px]"></div>
-          </div>
-        </div>
-        <div className="flex w-[774px] h-[50px] items-center justify-center gap-[10px]">
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666610] w-[75px] h-[43px] rounded-[4px] shadow-md">
-            <div className="flex items-center justify-center bg-[#090915] w-[74px] h-[41px] rounded-[4px]"></div>
-          </div>
-          {Array.from({ length: 13 }).map((key, idx) => {
-            return (
+            </div>
+          );
+        })}
+      </div>
+      {/* QWERTY  */}
+      <div className="flex items-center justify-evenly gap-1">
+        {keys[1].map((key, index) => {
+          return (
+            <div
+              key={index}
+              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+              style={{
+                width: `${key.width}px`,
+                height: `${key.height}px`,
+              }}
+            >
               <div
-                className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666616] w-[43px] h-[43px] rounded-[4px] shadow-md"
-                key={idx}
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                style={{
+                  width: `${key.width - 1.5}px`,
+                  height: `${key.height - 1.8}px`,
+                }}
               >
-                <div className="bg-[#090915] w-[41.5px] h-[41.7px] relative top-[0.3px] rounded-[3px]"></div>
+                {key.specialChar ? (
+                  <>
+                    <span className="text-[10px] opacity-20 font-inter">
+                      {key.char}
+                    </span>
+                    <span className="text-[8px] opacity-20 font-inter">
+                      {key.keyname}
+                    </span>
+                  </>
+                ) : (
+                  <span className="text-[10px] opacity-20 font-inter">
+                    {key.keyname}
+                  </span>
+                )}
               </div>
-            );
-          })}
-        </div>
-        <div className="flex w-[774px] h-[50px] items-center justify-center gap-[10px]">
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666610] w-[85px] h-[43px] rounded-[4px] shadow-md">
-            <div className="flex items-center justify-center bg-[#090915] w-[83.5px] h-[41px] rounded-[4px]"></div>
-          </div>
-          {Array.from({ length: 11 }).map((key, idx) => {
-            return (
+            </div>
+          );
+        })}
+      </div>
+      {/* ASDFG  */}
+      <div className="flex items-center justify-evenly gap-1">
+        {keys[2].map((key, index) => {
+          return (
+            <div
+              key={index}
+              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+              style={{
+                width: `${key.width}px`,
+                height: `${key.height}px`,
+              }}
+            >
               <div
-                className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666616] w-[43px] h-[43px] rounded-[4px] shadow-md"
-                key={idx}
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                style={{
+                  width: `${key.width - 1.5}px`,
+                  height: `${key.height - 1.8}px`,
+                }}
               >
-                <div className="bg-[#090915] w-[41.5px] h-[42.1px] relative top-[0.3px] rounded-[3px]"></div>
+                {key.specialChar ? (
+                  <>
+                    <span className="text-[10px] opacity-20 font-inter">
+                      {key.char}
+                    </span>
+                    <span className="text-[8px] opacity-20 font-inter">
+                      {key.keyname}
+                    </span>
+                  </>
+                ) : (
+                  <span className="text-left text-[10px] opacity-20 font-inter">
+                    {key.keyname}
+                  </span>
+                )}
               </div>
-            );
-          })}
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666610] w-[85px] h-[43px] rounded-[4px] shadow-md">
-            <div className="flex items-center justify-center bg-[#090915] w-[83.5px] h-[41.5px] rounded-[4px]"></div>
-          </div>
-        </div>
-        <div className="flex w-[774px] h-[50px] items-center justify-center gap-[10px]">
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666610] w-[59px] h-[43px] rounded-[4px] shadow-md">
-            <div className="flex items-center justify-center bg-[#090915] w-[57.3px] h-[41.5px] rounded-[4px]"></div>
-          </div>
-          {Array.from({ length: 11 }).map((key, idx) => {
+            </div>
+          );
+        })}
+      </div>
+      {/* ZXCVB  */}
+      <div className="flex items-center justify-evenly gap-1">
+        {keys[3].map((key, index) => {
+          return (
+            <div
+              key={index}
+              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+              style={{
+                width: `${key.width}px`,
+                height: `${key.height}px`,
+              }}
+            >
+              <div
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                style={{
+                  width: `${key.width - 1.5}px`,
+                  height: `${key.height - 1.5}px`,
+                }}
+              >
+                {key.specialChar ? (
+                  <>
+                    <span className="text-[10px] opacity-20 font-inter">
+                      {key.char}
+                    </span>
+                    <span className="text-[8px] opacity-20 font-inter">
+                      {key.keyname}
+                    </span>
+                  </>
+                ) : (
+                  <span className="text-left text-[10px] opacity-20 font-inter">
+                    {key.keyname}
+                  </span>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {/* Command, space  */}
+      <div className="flex items-center justify-evenly gap-16">
+        <div className="flex justify-center items-center gap-1">
+          {keys[4].map((key, index) => {
             return (
               <div
-                className={`flex items-center justify-center ${
-                  idx === 3 || idx === 4
-                    ? "bg-gradient-to-b from-[#988EFF] to-[#978eff33]"
-                    : "bg-gradient-to-b from-[#ffffff11] to-[#66666616]"
-                } w-[43px] h-[43px] rounded-[4px] shadow-md`}
-                key={idx}
+                key={index}
+                className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+                style={{
+                  width: `${key.width}px`,
+                  height: `${key.height}px`,
+                }}
               >
                 <div
-                  className={`${
-                    idx === 3 || idx === 4 ? "bg-[#090915]" : "bg-[#090915]"
-                  } w-[41.1px] h-[41.4px] relative top-[0.3px] rounded-[3px] flex items-center justify-center ${
-                    idx === 3 || idx === 4
-                      ? "text-[#978eff28]"
-                      : "text-[#978eff28]"
-                  } text-sm font-inter`}
+                  className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                  style={{
+                    width: `${key.width - 1.5}px`,
+                    height: `${key.height - 1.5}px`,
+                  }}
                 >
-                  {idx === 3 ? "C" : idx === 4 ? "V" : ""}
+                  {key.specialChar ? (
+                    <>
+                      <span className="text-[10px] opacity-20 font-inter">
+                        {key.char}
+                      </span>
+                      <span className="text-[8px] opacity-20 font-inter">
+                        {key.keyname}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-left text-[10px] opacity-20 font-inter">
+                      {key.keyname}
+                    </span>
+                  )}
                 </div>
               </div>
             );
           })}
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666610] w-[110px] h-[43px] rounded-[4px] shadow-md">
-            <div className="flex items-center justify-center bg-[#090915] w-[108.3px] h-[41.5px] rounded-[4px]"></div>
-          </div>
         </div>
-        <div className="flex w-[774px] h-[50px] items-center justify-center gap-[10px]">
-          {Array.from({ length: 3 }).map((key, idx) => {
+        <div className="flex items-center justify-center gap-1">
+          {keys[5].map((key, index) => {
             return (
               <div
-                className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666616] w-[43px] h-[43px] rounded-[4px] shadow-md"
-                key={idx}
+                key={index}
+                className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+                style={{
+                  width: `${key.width}px`,
+                  height: `${key.height}px`,
+                }}
               >
-                <div className="bg-[#090915] w-[41.5px] h-[42.1px] relative top-[0.3px] rounded-[3px]"></div>
+                <div
+                  className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                  style={{
+                    width: `${key.width - 1.5}px`,
+                    height: `${key.height - 1.5}px`,
+                  }}
+                >
+                  {key.specialChar ? (
+                    <>
+                      <span className="text-[10px] opacity-20 font-inter">
+                        {key.char}
+                      </span>
+                      <span className="text-[8px] opacity-20 font-inter">
+                        {key.keyname}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-left text-[10px] opacity-20 font-inter">
+                      {key.keyname}
+                    </span>
+                  )}
+                </div>
               </div>
             );
           })}
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#988EFF] to-[#978eff33] w-[70px] h-[43px] rounded-[4px] shadow-md">
-            <div className="flex flex-col items-center justify-center bg-[#090915] w-[68.5px] h-[42px] rounded-[3px]">
-              <p className="text-[10px] text-[#978eff28] text-right pl-8">⌘</p>
-              <p className="text-[10px] text-[#978eff28]">command</p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666610] w-[235px] h-[43px] rounded-[4px] shadow-md">
-            <div className="flex items-center justify-center bg-[#090915] w-[232.5px] h-[41.5px] rounded-[4px]"></div>
-          </div>
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666610] w-[68.5px] h-[43px] rounded-[4px] shadow-md">
-            <div className="flex items-center justify-center bg-[#090915] w-[83.5px] h-[41.5px] rounded-[4px]"></div>
-          </div>
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666616] w-[43px] h-[43px] rounded-[4px] shadow-md">
-            <div className="bg-[#090915] w-[41.5px] h-[42.1px] relative top-[0.3px] rounded-[3px]"></div>
-          </div>
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666616] w-[43px] h-[43px] rounded-[4px] shadow-md">
-            <div className="bg-[#090915] w-[41.5px] h-[42.1px] relative top-[0.3px] rounded-[3px]"></div>
-          </div>
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666616] w-[43px] h-[43px] rounded-[4px] shadow-md">
-            <div className="bg-[#090915] w-[41.5px] h-[42.1px] relative top-[0.3px] rounded-[3px]"></div>
-          </div>
-          <div className="flex items-center justify-center bg-gradient-to-b from-[#ffffff11] to-[#66666616] w-[43px] h-[43px] rounded-[4px] shadow-md">
-            <div className="bg-[#090915] w-[41.5px] h-[42.1px] relative top-[0.3px] rounded-[3px]"></div>
-          </div>
         </div>
       </div>
     </div>

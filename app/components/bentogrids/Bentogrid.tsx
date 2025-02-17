@@ -1,5 +1,5 @@
 import React from "react";
-import Keyboard from "./grids/keyboard/Keyboard";
+import Flexibility from "./grids/keyboard/Flexiblity";
 
 const Bentogrid = () => {
   return (
@@ -19,7 +19,7 @@ const Bentogrid = () => {
         {/* The bento starts here  */}
         <div className="flex flex-col w-[1147px] h-[1000px] relative top-2">
           <div className="flex items-center justify-between w-full h-auto">
-            <Keyboard />
+            <Flexibility />
           </div>
         </div>
       </div>
