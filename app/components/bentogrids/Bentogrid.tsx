@@ -1,10 +1,11 @@
 import React from "react";
 import Flexibility from "./grids/keyboard/Flexiblity";
+import Reciept from "@/app/components/bentogrids/grids/reciept/Reciept";
 
 const Bentogrid = () => {
   return (
     <div className="flex items-center justify-center w-full h-[1550px] absolute top-[1700px]">
-      <div className="flex flex-col items-center justify-between w-[1150px] h-[1250px]">
+      <div className="flex flex-col items-center justify-between w-[1350px] h-[1250px]">
         <div className="flex flex-col w-full items-center justify-center gap-5 opacity-75">
           <div className="flex flex-col items-center leading-tight font-aeonic">
             <h2 className="text-[40px]">Unlike any library</h2>
@@ -17,9 +18,10 @@ const Bentogrid = () => {
           </p>
         </div>
         {/* The bento starts here  */}
-        <div className="flex flex-col w-[1147px] h-[1000px] relative top-2">
-          <div className="flex items-center justify-between w-full h-auto">
+        <div className="flex flex-col w-full h-[1000px] relative top-2">
+          <div className="flex items-center justify-center gap-5 w-full h-auto">
             <Flexibility />
+            <Reciept />
           </div>
         </div>
       </div>
