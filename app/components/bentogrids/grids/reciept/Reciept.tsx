@@ -37,7 +37,7 @@ const Reciept = () => {
             <Slip />
           </motion.div>
         </div>
-        <div className="flex flex-col items-center justify-center relative w-full top-10 gap-1">
+        <div className="flex flex-col items-center justify-center relative w-full top-10 gap-1 cursor-default">
           <motion.h2
             className="font-inter text-[22px]"
             animate={{
