@@ -7,16 +7,11 @@ export const useTextScramble = (text: string, isScrambling: boolean) => {
   const [scrambledText, setScrambledText] = useState(text);
 
   useEffect(() => {
-    if (!isScrambling) {
-      setScrambledText(text);
-      return;
-    }
-
     let frame = 0;
     const totalFrames = 30; // Increased frames for smoother animation
     let interval: NodeJS.Timeout;
 
-    const scramble = () => {
+    const scramble = (isHovering: boolean) => {
       frame++;
 
       const progress = frame / totalFrames;
@@ -27,21 +22,36 @@ export const useTextScramble = (text: string, isScrambling: boolean) => {
 
           // Calculate when this character should stop scrambling
           const charProgress = (idx / text.length) * 0.5; // Spread the effect over half the duration
-          if (progress > charProgress + 0.5) return char; // Show original after halfway point
 
-          // During scramble phase
-          return characters[Math.floor(Math.random() * characters.length)];
+          if (isHovering) {
+            // During hover-in scramble phase
+            if (progress < charProgress + 0.5) {
+              return characters[Math.floor(Math.random() * characters.length)];
+            }
+          } else {
+            // During hover-out scramble phase
+            if (progress > charProgress + 0.5) {
+              return char; // Show original after halfway point
+            }
+            return characters[Math.floor(Math.random() * characters.length)];
+          }
+
+          return char;
         })
         .join("");
 
       setScrambledText(scrambled);
 
       if (frame < totalFrames) {
-        interval = setTimeout(scramble, 20); // Faster updates for smoother animation
+        interval = setTimeout(() => scramble(isHovering), 27); // Faster updates for smoother animation
       }
     };
 
-    scramble();
+    if (isScrambling) {
+      scramble(true); // Start scrambling when hovering in
+    } else {
+      scramble(false); // Start scrambling when hovering out
+    }
 
     return () => clearTimeout(interval);
   }, [text, isScrambling]);

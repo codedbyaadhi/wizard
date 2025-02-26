@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import localFont from "next/font/local";
-
 import "./globals.css";
 
+// Google Fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,14 +14,20 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const aeonic = localFont({
-  src: "../public/fonts/aeonik/Aeonik.otf",
-  variable: "--font-aeonic-regular",
-});
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Local Fonts - Ensure correct paths relative to the file location
+const aeonic = localFont({
+  src: "../public/fonts/aeonik/Aeonik.otf", // Adjusted path
+  variable: "--font-aeonic-regular",
+});
+
+const sfpro = localFont({
+  src: "../public/fonts/sfpro/SFPRODISPLAYREGULAR.otf", // Adjusted path
+  variable: "--font-sf-regular",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${aeonic.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${aeonic.variable} ${sfpro.variable} antialiased`}
       >
         {children}
       </body>

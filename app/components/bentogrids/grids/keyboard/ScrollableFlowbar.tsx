@@ -44,7 +44,7 @@ const ScrollableFlowbar = () => {
   }, []); // Empty dependency array ensures this effect runs only once when the component mounts
 
   return (
-    <div className="relative w-[780px] h-[40px] overflow-hidden opacity-70">
+    <div className="relative w-[780px] h-[40px] overflow-hidden opacity-70 font-sf">
       {/* Main container for the flow of items with hidden overflow for smooth scrolling */}
 
       <motion.div
@@ -70,7 +70,7 @@ const ScrollableFlowbar = () => {
             </div>
 
             {/* Evenly Spaced Text */}
-            <p className="font-inter text-[14px] font-light text-white text-center flex-grow">
+            <p className="font-sf text-[14px] font-light text-white text-center flex-grow">
               {text} {/* Display the descriptive text */}
             </p>
           </div>

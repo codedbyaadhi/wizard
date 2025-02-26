@@ -1,17 +1,15 @@
 "use client";
-import { useState } from "react";
-import Slip from "./slip";
-import { motion } from "motion/react";
 import { useTextScramble } from "@/hooks/useTextScramble";
+import { motion } from "motion/react";
+import React, { useState } from "react";
 
-const Reciept = () => {
+const Payment = () => {
   const [hovered, isHovered] = useState(false);
-  const title = useTextScramble("Thrifty", hovered);
+  const title = useTextScramble("Secure Payments", hovered);
   const description = useTextScramble(
-    "Delivering maximum value by streamlining costs and ensuring efficiency",
+    "Built for ultra secure and reliable payment gateways that keeps you going",
     hovered
   );
-
   return (
     <div
       className="flex justify-center items-center w-[370px] h-[485px] bg-gradient-to-b from-[#050717] to-[#292e43] rounded-[33px] overflow-hidden"
@@ -22,7 +20,7 @@ const Reciept = () => {
         isHovered(false);
       }}
     >
-      <div className="flex flex-col items-center w-[369px] h-[483.5px] bg-gradient-to-b from-[#010414] to-[#0F1026] rounded-[33px] overflow-hidden">
+      <div className="flex flex-col items-center w-[369px] h-[483.5px] bg-gradient-to-b from-[#030115] to-[#0E0C20] rounded-[33px] overflow-hidden">
         <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px]">
           <motion.div
             className="flex items-center justify-center"
@@ -33,9 +31,7 @@ const Reciept = () => {
               duration: 1.5,
               ease: "easeInOut",
             }}
-          >
-            <Slip />
-          </motion.div>
+          ></motion.div>
         </div>
         <div className="flex flex-col items-center justify-center relative w-full top-10 gap-1 cursor-default">
           <motion.h2
@@ -68,4 +64,4 @@ const Reciept = () => {
   );
 };
 
-export default Reciept;
+export default Payment;

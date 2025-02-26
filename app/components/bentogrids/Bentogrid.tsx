@@ -1,6 +1,8 @@
 import React from "react";
 import Flexibility from "./grids/keyboard/Flexiblity";
 import Reciept from "@/app/components/bentogrids/grids/reciept/Reciept";
+import Community from "./community/Community";
+import Payment from "./grids/payment/Payment";
 
 const Bentogrid = () => {
   return (
@@ -18,10 +20,14 @@ const Bentogrid = () => {
           </p>
         </div>
         {/* The bento starts here  */}
-        <div className="flex flex-col w-full h-[1000px] relative top-2">
+        <div className="flex flex-col w-full h-[1000px] relative top-2 gap-6">
           <div className="flex items-center justify-center gap-5 w-full h-auto">
             <Flexibility />
+            <Payment />
+          </div>
+          <div className="flex items-center justify-center gap-5 w-full h-auto">
             <Reciept />
+            <Community />
           </div>
         </div>
       </div>

@@ -2,9 +2,9 @@ import React from "react";
 
 const Slip = () => {
   const items = [
-    { qty: 1, name: "Chicken Soup", price: 45.0 },
-    { qty: 2, name: "Tomato Soup", price: 15.0 },
-    { qty: 1, name: "Crispy Chicken", price: 30.0 },
+    { qty: 1, name: "SaaS Development", price: 17499 },
+    { qty: 1, name: "Multi-page", price: 249.0 },
+    { qty: 1, name: "Design", price: 799.0 },
   ];
 
   const total = items.reduce((sum, item) => sum + item.price * item.qty, 0);
@@ -13,12 +13,12 @@ const Slip = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen p-4">
-      <div className="bg-gradient-to-b from-[#060514] to-[#201E37] w-[230px] h-[310px] relative shadow-md border-b-transparent">
+      <div className="bg-gradient-to-b from-[#060514] to-[#201E37] w-[230px] h-[310px] relative shadow-md border-b-transparent ">
         {/* Printer Top */}
         <div className="absolute -top-4 left-0 right-0 h-4 rounded-t-lg" />
 
         {/* Receipt Content */}
-        <div className="p-2 font-mono text-sm">
+        <div className="p-2 font-inter text-sm opacity-50">
           {/* Header */}
           <div className="flex items-center justify-center text-center mb-4 text-[#5e688f]">
             <div className="border-b border-[#42405E] w-3/5">
@@ -42,7 +42,7 @@ const Slip = () => {
           {/* Total */}
           <div className="border-t border-[#42405E] py-2 mb-2 text-[#8c98c8]">
             <div className="flex justify-between font-bold">
-              <span>TOTAL AMOUNT</span>
+              <span>GRAND TOTAL</span>
               <span>${total.toFixed(2)}</span>
             </div>
           </div>

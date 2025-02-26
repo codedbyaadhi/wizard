@@ -11,6 +11,7 @@ export default {
       fontFamily: {
         inter: ["var(--font-inter)"],
         aeonic: ["var(--font-aeonic-regular)"],
+        sf: ["var(--font-sf-regular)"],
       },
       colors: {
         background: "var(--background)",
