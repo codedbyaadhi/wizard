@@ -35,12 +35,12 @@ const Payment = () => {
                 opacity: 1,
               }}
               animate={{
-                x: [-450, 50, 420],
-                opacity: [1, 1, 0.2],
+                x: [-450, 50, -450],
+                opacity: [1, 1, 0.4],
               }}
               style={{ x }} // Bind motion value to track position
               transition={{
-                duration: 6,
+                duration: 10,
                 times: [0, 0.7, 1],
                 ease: ["easeInOut", "linear", "easeOut"],
                 repeat: Infinity,
