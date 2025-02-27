@@ -83,26 +83,26 @@ const PaymentMachine = () => {
                 </svg>
               </div>
               {/* The keybars  */}
-              <div className="flex flex-col items-center justify-evenly w-[68px] h-full opacity-40">
-                <div className="flex items-center justify-between gap-1">
+              <div className="flex flex-col items-center justify-evenly w-[68px] h-full">
+                <div className="flex items-center justify-between gap-1 opacity-40">
                   {/* ◀ */}
-                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240]">
+                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240] transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[3px] opacity-50">◀</p>
                   </div>
                   {/* - */}
-                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240]">
+                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240] transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[5px] opacity-50">-</p>
                   </div>
                   {/* Main key  */}
-                  <div className="flex flex-col items-center justify-center w-[25px] h-[13px] bg-[#232240] rounded-[1px] shadow-md">
+                  <div className="flex flex-col items-center justify-center w-[25px] h-[13px] bg-[#232240] rounded-[1px] shadow-md transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[3px] opacity-50">▲</p>
                     <p className="text-[3px] opacity-50">▼</p>
                   </div>
-                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240]">
+                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240] transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[5px] opacity-50">-</p>
                   </div>
                   {/* - */}
-                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240]">
+                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240] transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[3px] opacity-50">▶</p>
                   </div>
                 </div>
