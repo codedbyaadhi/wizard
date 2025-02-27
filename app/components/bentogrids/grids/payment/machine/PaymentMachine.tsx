@@ -11,7 +11,7 @@ const PaymentMachine = () => {
       {/* The machine conntainer  */}
       <div className="flex items-center justify-center w-[148px] h-[237px]  bg-gradient-to-b from-[#aca6fc53] to-[#262345] shadow-md">
         <div className="flex items-center justify-center w-[148px] h-[237px] bg-gradient-to-b from-[#181930] to-[#0B081C]">
-          <div className="flex flex-col items-center justify-evenly w-[131px] h-[223px] rounded-t-[9px] bg-gradient-to-b from-[#23233D] to-[#0B081C] shadow-inner">
+          <div className="flex flex-col items-center justify-center gap-1 w-[131px] h-[223px] rounded-t-[9px] bg-gradient-to-b from-[#23233D] to-[#0B081C] shadow-inner">
             {/* The display of the payment machine  */}
             <div className="flex items-center justify-center text-center w-[112px] h-[50px] bg-[#141429] shadow-inner rounded-[5px] border-[#2623455d] border">
               <p className="text-[15px] text-[#484863] font-sf">ACCEPTED</p>
@@ -83,24 +83,51 @@ const PaymentMachine = () => {
                 </svg>
               </div>
               {/* The keybars  */}
-              <div className="flex flex-col items-center justify-evenly gap-2 w-[68px]">
-                {Array.from({ length: 4 }).map((item, idx) => {
-                  return (
-                    <div
-                      className="flex items-center justify-evenly gap-2"
-                      key={idx}
-                    >
-                      {Array.from({ length: 4 }).map((_, idx) => {
-                        return (
-                          <div
-                            className="w-[13px] h-[8px] rounded-[1px] bg-[#1e1c3879] shadow-md"
-                            key={idx}
-                          ></div>
-                        );
-                      })}
-                    </div>
-                  );
-                })}
+              <div className="flex flex-col items-center justify-evenly w-[68px] h-full opacity-40">
+                <div className="flex items-center justify-between gap-1">
+                  {/* ◀ */}
+                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240]">
+                    <p className="text-[3px] opacity-50">◀</p>
+                  </div>
+                  {/* - */}
+                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240]">
+                    <p className="text-[5px] opacity-50">-</p>
+                  </div>
+                  {/* Main key  */}
+                  <div className="flex flex-col items-center justify-center w-[25px] h-[13px] bg-[#232240] rounded-[1px] shadow-md">
+                    <p className="text-[3px] opacity-50">▲</p>
+                    <p className="text-[3px] opacity-50">▼</p>
+                  </div>
+                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240]">
+                    <p className="text-[5px] opacity-50">-</p>
+                  </div>
+                  {/* - */}
+                  <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240]">
+                    <p className="text-[3px] opacity-50">▶</p>
+                  </div>
+                </div>
+                {/* The number key container  */}
+                <div className="flex flex-col items-center justify-center gap-2">
+                  {Array.from({ length: 5 }).map((item, idx) => {
+                    return (
+                      <div
+                        className="flex items-center justify-evenly gap-2"
+                        key={idx}
+                      >
+                        {Array.from({ length: 4 }).map((_, idx) => {
+                          return (
+                            <div
+                              className="flex-items-center justify-center text-center w-[13px] h-[8px] rounded-[1px] bg-[#1e1c3879] shadow-md transition-all duration-150 hover:bg-[#2d2a55bc]"
+                              key={idx}
+                            >
+                              <p className="text-[7px] opacity-10">x</p>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
               {/* The right border  */}
               <div className="flex">
