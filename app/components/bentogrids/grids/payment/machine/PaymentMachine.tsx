@@ -83,7 +83,25 @@ const PaymentMachine = () => {
                 </svg>
               </div>
               {/* The keybars  */}
-              <div className="flex"></div>
+              <div className="flex flex-col items-center justify-evenly gap-2 w-[68px]">
+                {Array.from({ length: 4 }).map((item, idx) => {
+                  return (
+                    <div
+                      className="flex items-center justify-evenly gap-2"
+                      key={idx}
+                    >
+                      {Array.from({ length: 4 }).map((_, idx) => {
+                        return (
+                          <div
+                            className="w-[13px] h-[8px] rounded-[1px] bg-[#1e1c3879] shadow-md"
+                            key={idx}
+                          ></div>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
               {/* The right border  */}
               <div className="flex">
                 <svg
