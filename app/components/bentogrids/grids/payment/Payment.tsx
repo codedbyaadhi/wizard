@@ -1,6 +1,6 @@
 "use client";
 import { useTextScramble } from "@/hooks/useTextScramble";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import PaymentMachine from "./machine/PaymentMachine";
 
@@ -11,18 +11,41 @@ const Payment = () => {
     "Built for ultra secure and reliable payment gateways that keeps you going",
     hovered
   );
+
   return (
     <div
       className="flex justify-center items-center w-[370px] h-[485px] bg-gradient-to-b from-[#050717] to-[#292e43] rounded-[33px] overflow-hidden"
-      onMouseOver={() => {
-        isHovered(true);
-      }}
-      onMouseLeave={() => {
-        isHovered(false);
-      }}
+      onMouseOver={() => isHovered(true)}
+      onMouseLeave={() => isHovered(false)}
     >
       <div className="flex flex-col items-center w-[369px] h-[483.5px] bg-gradient-to-b from-[#030115] to-[#0E0C20] rounded-[33px] overflow-hidden">
-        <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px]">
+        {/* Card animation wrapper */}
+        <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px] relative">
+          {/* Overflow hidden layer */}
+          <div className="absolute inset-0 z-10 pointer-events-none" />
+
+          <div className="flex items-start absolute w-[369px] h-[85px]">
+            <motion.div
+              className="flex items-center w-[132px] h-[82px] bg-[#1E1D32] border border-[#6a67991e] rounded-[3px]"
+              initial={{
+                x: -450,
+                opacity: 1,
+              }}
+              animate={{
+                x: [-450, 50, 420],
+                opacity: [1, 1, 0.2], // Subtle fade-out for smoothness
+              }}
+              transition={{
+                duration: 6, // Slightly longer for better pacing
+                times: [0, 0.7, 1], // More time at 50 (70% of duration)
+                ease: ["easeInOut", "linear", "easeOut"], // Smoother transitions
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+            >
+              <div className="w-[5px] h-[30px] rounded-full bg-[#060419] relative left-2"></div>
+            </motion.div>
+          </div>
           <PaymentMachine />
         </div>
         <div className="flex flex-col items-center justify-center relative w-full top-10 gap-1 cursor-default">

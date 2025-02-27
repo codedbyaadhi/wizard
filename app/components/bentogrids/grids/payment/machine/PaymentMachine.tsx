@@ -3,7 +3,7 @@ import React from "react";
 
 const PaymentMachine = () => {
   return (
-    <div className="flex flex-col items-center w-[186px] h-[320px]">
+    <div className="flex flex-col items-center w-[186px] h-[320px] z-20">
       {/* The head of the machine  */}
       <div className="flex items-center justify-center w-[186px] h-[87px] bg-gradient-to-b from-[#020015] to-[#6661af53]">
         <div className="flex items-center justify-center w-[185.3px] h-[83px] bg-gradient-to-b from-[#050317] to-[#191931] relative bottom-[0.5px] shadow-md"></div>
