@@ -1,6 +1,6 @@
 "use client";
 import { useTextScramble } from "@/hooks/useTextScramble";
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import React, { useState } from "react";
 import PaymentMachine from "./machine/PaymentMachine";
 
@@ -12,6 +12,9 @@ const Payment = () => {
     hovered
   );
 
+  // Motion value to track card's x position
+  const x = useMotionValue(-450);
+
   return (
     <div
       className="flex justify-center items-center w-[370px] h-[485px] bg-gradient-to-b from-[#050717] to-[#292e43] rounded-[33px] overflow-hidden"
@@ -20,7 +23,7 @@ const Payment = () => {
     >
       <div className="flex flex-col items-center w-[369px] h-[483.5px] bg-gradient-to-b from-[#030115] to-[#0E0C20] rounded-[33px] overflow-hidden">
         {/* Card animation wrapper */}
-        <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px] relative">
+        <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px] relative cursor-pointer">
           {/* Overflow hidden layer */}
           <div className="absolute inset-0 z-10 pointer-events-none" />
 
@@ -33,12 +36,13 @@ const Payment = () => {
               }}
               animate={{
                 x: [-450, 50, 420],
-                opacity: [1, 1, 0.2], // Subtle fade-out for smoothness
+                opacity: [1, 1, 0.2],
               }}
+              style={{ x }} // Bind motion value to track position
               transition={{
-                duration: 6, // Slightly longer for better pacing
-                times: [0, 0.7, 1], // More time at 50 (70% of duration)
-                ease: ["easeInOut", "linear", "easeOut"], // Smoother transitions
+                duration: 6,
+                times: [0, 0.7, 1],
+                ease: ["easeInOut", "linear", "easeOut"],
                 repeat: Infinity,
                 repeatType: "loop",
               }}
@@ -46,7 +50,8 @@ const Payment = () => {
               <div className="w-[5px] h-[30px] rounded-full bg-[#060419] relative left-2"></div>
             </motion.div>
           </div>
-          <PaymentMachine />
+          {/* Pass x position to PaymentMachine */}
+          <PaymentMachine cardX={x} />
         </div>
         <div className="flex flex-col items-center justify-center relative w-full top-10 gap-1 cursor-default">
           <motion.h2

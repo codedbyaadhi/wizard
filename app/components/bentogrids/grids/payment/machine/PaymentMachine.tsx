@@ -1,23 +1,54 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useTextScramble } from "@/hooks/useTextScramble";
+import { MotionValue } from "framer-motion";
 
-const PaymentMachine = () => {
+const PaymentMachine = ({ cardX }: { cardX?: MotionValue<number> }) => {
+  // State to control gibberish effect for "ACCEPTED"
+  const [scrambleAccepted, setScrambleAccepted] = useState(true); // Start as gibberish
+
+  // Listen to cardX changes and trigger scramble effect
+  useEffect(() => {
+    if (!cardX) {
+      console.error("cardX is undefined. Cannot subscribe to changes.");
+      return; // Exit early if cardX is not provided
+    }
+
+    const unsubscribe = cardX.on("change", (latestX) => {
+      // Normal "ACCEPTED" when card is around x: 50
+      if (latestX >= 40 && latestX <= 60) {
+        setScrambleAccepted(false); // Show "ACCEPTED" clearly at x: 50
+      }
+      // Gibberish before x: 50 (start) and after x: 60 (moving forward)
+      else if (latestX < 40 || latestX > 60) {
+        setScrambleAccepted(true); // Gibberish at start and after moving forward
+      }
+    });
+
+    return () => unsubscribe(); // Clean up subscription
+  }, [cardX]);
+
+  // Apply scramble effect to "ACCEPTED"
+  const acceptedText = useTextScramble("ACCEPTED", scrambleAccepted);
+
   return (
     <div className="flex flex-col items-center w-[186px] h-[320px] z-20">
-      {/* The head of the machine  */}
+      {/* The head of the machine */}
       <div className="flex items-center justify-center w-[186px] h-[87px] bg-gradient-to-b from-[#020015] to-[#6661af53]">
         <div className="flex items-center justify-center w-[185.3px] h-[83px] bg-gradient-to-b from-[#050317] to-[#191931] relative bottom-[0.5px] shadow-md"></div>
       </div>
-      {/* The machine conntainer  */}
-      <div className="flex items-center justify-center w-[148px] h-[237px]  bg-gradient-to-b from-[#aca6fc53] to-[#262345] shadow-md">
+      {/* The machine container */}
+      <div className="flex items-center justify-center w-[148px] h-[237px] bg-gradient-to-b from-[#aca6fc53] to-[#262345] shadow-md">
         <div className="flex items-center justify-center w-[148px] h-[237px] bg-gradient-to-b from-[#181930] to-[#0B081C]">
           <div className="flex flex-col items-center justify-center gap-1 w-[131px] h-[223px] rounded-t-[9px] bg-gradient-to-b from-[#23233D] to-[#0B081C] shadow-inner">
-            {/* The display of the payment machine  */}
+            {/* The display of the payment machine */}
             <div className="flex items-center justify-center text-center w-[112px] h-[50px] bg-[#141429] shadow-inner rounded-[5px] border-[#2623455d] border">
-              <p className="text-[15px] text-[#484863] font-sf">ACCEPTED</p>
+              <p className="text-[15px] text-[#484863] font-sf">
+                {acceptedText}
+              </p>
             </div>
             <div className="flex items-center justify-between w-full h-[118px]">
-              {/* The left border line  */}
+              {/* The left border line */}
               <div className="flex">
                 <svg
                   width="25"
@@ -82,18 +113,15 @@ const PaymentMachine = () => {
                   </defs>
                 </svg>
               </div>
-              {/* The keybars  */}
+              {/* The keybars */}
               <div className="flex flex-col items-center justify-evenly w-[68px] h-full">
                 <div className="flex items-center justify-between gap-1 opacity-40">
-                  {/* ◀ */}
                   <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240] transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[3px] opacity-50">◀</p>
                   </div>
-                  {/* - */}
                   <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240] transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[5px] opacity-50">-</p>
                   </div>
-                  {/* Main key  */}
                   <div className="flex flex-col items-center justify-center w-[25px] h-[13px] bg-[#232240] rounded-[1px] shadow-md transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[3px] opacity-50">▲</p>
                     <p className="text-[3px] opacity-50">▼</p>
@@ -101,35 +129,30 @@ const PaymentMachine = () => {
                   <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240] transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[5px] opacity-50">-</p>
                   </div>
-                  {/* - */}
                   <div className="flex items-center justify-center w-[14px] h-[7px] bg-[#232240] transition-all duration-150 hover:bg-[#383471bc]">
                     <p className="text-[3px] opacity-50">▶</p>
                   </div>
                 </div>
-                {/* The number key container  */}
+                {/* The number key container */}
                 <div className="flex flex-col items-center justify-center gap-2">
-                  {Array.from({ length: 5 }).map((item, idx) => {
-                    return (
-                      <div
-                        className="flex items-center justify-evenly gap-2"
-                        key={idx}
-                      >
-                        {Array.from({ length: 4 }).map((_, idx) => {
-                          return (
-                            <div
-                              className="flex-items-center justify-center text-center w-[13px] h-[8px] rounded-[1px] bg-[#1e1c3879] shadow-md transition-all duration-150 hover:bg-[#2d2a55bc]"
-                              key={idx}
-                            >
-                              <p className="text-[7px] opacity-10">x</p>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    );
-                  })}
+                  {Array.from({ length: 5 }).map((_, idx) => (
+                    <div
+                      className="flex items-center justify-evenly gap-2"
+                      key={idx}
+                    >
+                      {Array.from({ length: 4 }).map((_, idx) => (
+                        <div
+                          className="flex-items-center justify-center text-center w-[13px] h-[8px] rounded-[1px] bg-[#1e1c3879] shadow-md transition-all duration-150 hover:bg-[#2d2a55bc]"
+                          key={idx}
+                        >
+                          <p className="text-[7px] opacity-10">x</p>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
                 </div>
               </div>
-              {/* The right border  */}
+              {/* The right border */}
               <div className="flex">
                 <svg
                   width="25"
