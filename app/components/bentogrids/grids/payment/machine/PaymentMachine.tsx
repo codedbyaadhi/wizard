@@ -1,0 +1,160 @@
+"use client";
+import React from "react";
+
+const PaymentMachine = () => {
+  return (
+    <div className="flex flex-col items-center w-[186px] h-[320px]">
+      {/* The head of the machine  */}
+      <div className="flex items-center justify-center w-[186px] h-[87px] bg-gradient-to-b from-[#020015] to-[#6661af53]">
+        <div className="flex items-center justify-center w-[185.3px] h-[83px] bg-gradient-to-b from-[#050317] to-[#191931] relative bottom-[0.5px] shadow-md"></div>
+      </div>
+      {/* The machine conntainer  */}
+      <div className="flex items-center justify-center w-[148px] h-[237px]  bg-gradient-to-b from-[#aca6fc53] to-[#262345] shadow-md">
+        <div className="flex items-center justify-center w-[148px] h-[237px] bg-gradient-to-b from-[#181930] to-[#0B081C]">
+          <div className="flex flex-col items-center justify-evenly w-[131px] h-[223px] rounded-t-[9px] bg-gradient-to-b from-[#23233D] to-[#0B081C] shadow-inner">
+            {/* The display of the payment machine  */}
+            <div className="flex items-center justify-center text-center w-[112px] h-[50px] bg-[#141429] shadow-inner rounded-[5px] border-[#2623455d] border">
+              <p className="text-[15px] text-[#484863] font-sf">ACCEPTED</p>
+            </div>
+            <div className="flex items-center justify-between w-full h-[118px]">
+              {/* The left border line  */}
+              <div className="flex">
+                <svg
+                  width="25"
+                  height="124"
+                  viewBox="0 0 25 124"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g filter="url(#filter0_d_894_55)">
+                    <path
+                      d="M4.5 0.834473L9 5.33165L19.5 100.222L9 115.063"
+                      stroke="url(#paint0_linear_894_55)"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_894_55"
+                      x="0.146484"
+                      y="0.480957"
+                      width="23.8713"
+                      height="122.871"
+                      filterUnits="userSpaceOnUse"
+                      colorInterpolationFilters="sRGB"
+                    >
+                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dy="4" />
+                      <feGaussianBlur stdDeviation="2" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_894_55"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_894_55"
+                        result="shape"
+                      />
+                    </filter>
+                    <linearGradient
+                      id="paint0_linear_894_55"
+                      x1="12"
+                      y1="0.834473"
+                      x2="12"
+                      y2="115.063"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#2A2A48" />
+                      <stop offset="1" stopColor="#0A091E" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              {/* The keybars  */}
+              <div className="flex"></div>
+              {/* The right border  */}
+              <div className="flex">
+                <svg
+                  width="25"
+                  height="124"
+                  viewBox="0 0 25 124"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g filter="url(#filter0_d_894_56)">
+                    <path
+                      d="M20 0.834473L15.5 5.33165L5 100.222L15.5 115.063"
+                      stroke="url(#paint0_linear_894_56)"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_894_56"
+                      x="0.482178"
+                      y="0.480957"
+                      width="23.8713"
+                      height="122.871"
+                      filterUnits="userSpaceOnUse"
+                      colorInterpolationFilters="sRGB"
+                    >
+                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dy="4" />
+                      <feGaussianBlur stdDeviation="2" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_894_56"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_894_56"
+                        result="shape"
+                      />
+                    </filter>
+                    <linearGradient
+                      id="paint0_linear_894_56"
+                      x1="12.5"
+                      y1="0.834473"
+                      x2="12.5"
+                      y2="115.063"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#2A2A48" />
+                      <stop offset="1" stopColor="#0A091E" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PaymentMachine;

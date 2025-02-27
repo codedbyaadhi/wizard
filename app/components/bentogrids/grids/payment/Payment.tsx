@@ -2,6 +2,7 @@
 import { useTextScramble } from "@/hooks/useTextScramble";
 import { motion } from "motion/react";
 import React, { useState } from "react";
+import PaymentMachine from "./machine/PaymentMachine";
 
 const Payment = () => {
   const [hovered, isHovered] = useState(false);
@@ -22,16 +23,7 @@ const Payment = () => {
     >
       <div className="flex flex-col items-center w-[369px] h-[483.5px] bg-gradient-to-b from-[#030115] to-[#0E0C20] rounded-[33px] overflow-hidden">
         <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px]">
-          <motion.div
-            className="flex items-center justify-center"
-            animate={{
-              y: hovered ? 0 : -130,
-            }}
-            transition={{
-              duration: 1.5,
-              ease: "easeInOut",
-            }}
-          ></motion.div>
+          <PaymentMachine />
         </div>
         <div className="flex flex-col items-center justify-center relative w-full top-10 gap-1 cursor-default">
           <motion.h2
