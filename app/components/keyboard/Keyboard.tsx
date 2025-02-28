@@ -208,7 +208,7 @@ const keys: KeyType[][] = [
     {
       specialChar: false,
       keyname: "Capslock",
-      width: 77,
+      width: 85,
       height: 43,
     },
     {
@@ -282,7 +282,7 @@ const keys: KeyType[][] = [
     {
       specialChar: false,
       keyname: "Return",
-      width: 120,
+      width: 110,
       height: 43,
     },
     {
@@ -397,20 +397,20 @@ const keys: KeyType[][] = [
 
 const Keyboard = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-1 w-[789px] h-[253px] bg-gradient-to-b from-[#010515] to-[#121421] rounded-b-[20px] border-b border-[#ffffff09] border-l border-r">
+    <div className="flex flex-col items-center justify-center gap-1 w-[789px] h-[253px] bg-gradient-to-b from-[#040216] to-[#17162c9b] rounded-b-[20px] border-b border-[#ffffff09] border-l border-r">
       <div className="flex items-center justify-evenly gap-1">
         {keys[0].map((key, index) => {
           return (
             <div
               key={index}
-              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+              className="flex items-center justify-center bg-gradient-to-b from-[#2e303d89] to-[#171927] rounded-[4px] opacity-30 shadow-md"
               style={{
                 width: `${key.width}px`,
                 height: `${key.height}px`,
               }}
             >
               <div
-                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#171528] to-[#17162E] rounded-[4px] gap-[2px] font-inter"
                 style={{
                   width: `${key.width - 1.5}px`,
                   height: `${key.height - 1.8}px`,
@@ -441,14 +441,14 @@ const Keyboard = () => {
           return (
             <div
               key={index}
-              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+              className="flex items-center justify-center bg-gradient-to-b from-[#2e303d89] to-[#171927] rounded-[4px] opacity-40 shadow-md"
               style={{
                 width: `${key.width}px`,
                 height: `${key.height}px`,
               }}
             >
               <div
-                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#171528] to-[#17162E] rounded-[4px] gap-[2px] font-inter"
                 style={{
                   width: `${key.width - 1.5}px`,
                   height: `${key.height - 1.8}px`,
@@ -479,14 +479,14 @@ const Keyboard = () => {
           return (
             <div
               key={index}
-              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D70] to-[#171927] rounded-[4px] opacity-50 shadow-md"
               style={{
                 width: `${key.width}px`,
                 height: `${key.height}px`,
               }}
             >
               <div
-                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#161528] to-[#17162E] rounded-[4px] gap-[2px] font-inter"
                 style={{
                   width: `${key.width - 1.5}px`,
                   height: `${key.height - 1.8}px`,
@@ -517,14 +517,14 @@ const Keyboard = () => {
           return (
             <div
               key={index}
-              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+              className="flex items-center justify-center bg-gradient-to-b from-[#2E303D70] to-[#171927] rounded-[4px] opacity-60 shadow-md"
               style={{
                 width: `${key.width}px`,
                 height: `${key.height}px`,
               }}
             >
               <div
-                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-[#161528] to-[#17162E] rounded-[4px] gap-[2px] font-inter"
                 style={{
                   width: `${key.width - 1.5}px`,
                   height: `${key.height - 1.5}px`,
@@ -556,14 +556,14 @@ const Keyboard = () => {
             return (
               <div
                 key={index}
-                className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+                className="flex items-center justify-center bg-gradient-to-b from-[#2E303D70] to-[#171927] rounded-[4px] opacity-70 shadow-md"
                 style={{
                   width: `${key.width}px`,
                   height: `${key.height}px`,
                 }}
               >
                 <div
-                  className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                  className="flex flex-col items-center justify-center bg-gradient-to-b from-[#161528] to-[#17162E] rounded-[4px] gap-[2px] font-inter"
                   style={{
                     width: `${key.width - 1.5}px`,
                     height: `${key.height - 1.5}px`,
@@ -593,14 +593,14 @@ const Keyboard = () => {
             return (
               <div
                 key={index}
-                className="flex items-center justify-center bg-gradient-to-b from-[#2E303D] to-[#171927] rounded-[4px] opacity-60 shadow-md"
+                className="flex items-center justify-center bg-gradient-to-b from-[#2E303D70] to-[#171927] rounded-[4px] opacity-80 shadow-md"
                 style={{
                   width: `${key.width}px`,
                   height: `${key.height}px`,
                 }}
               >
                 <div
-                  className="flex flex-col items-center justify-center bg-gradient-to-b from-[#080A19] to-[#101220] rounded-[4px] gap-[2px] font-inter"
+                  className="flex flex-col items-center justify-center bg-gradient-to-b from-[#161528] to-[#17162E] rounded-[4px] gap-[2px] font-inter"
                   style={{
                     width: `${key.width - 1.5}px`,
                     height: `${key.height - 1.5}px`,
