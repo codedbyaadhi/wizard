@@ -2,6 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { useTextScramble } from "@/hooks/useTextScramble";
 import { MotionValue } from "framer-motion";
+import { Victor_Mono } from "next/font/google";
+
+const victorMono = Victor_Mono({
+  weight: "400", // Specify the font weight(s) you need, e.g., "400", "700"
+  subsets: ["latin"], // Specify the character subsets, e.g., "latin"
+});
 
 const PaymentMachine = ({ cardX }: { cardX?: MotionValue<number> }) => {
   // State to control gibberish effect for "ACCEPTED"
@@ -43,7 +49,9 @@ const PaymentMachine = ({ cardX }: { cardX?: MotionValue<number> }) => {
           <div className="flex flex-col items-center justify-center gap-1 w-[131px] h-[223px] rounded-t-[9px] bg-gradient-to-b from-[#23233D] to-[#0B081C] shadow-inner">
             {/* The display of the payment machine */}
             <div className="flex items-center justify-center text-center w-[112px] h-[50px] bg-[#141429] shadow-inner rounded-[5px] border-[#2623455d] border">
-              <p className="text-[15px] text-[#484863] font-sf">
+              <p
+                className={`text-[15px] text-[#484863] ${victorMono.className}`}
+              >
                 {acceptedText}
               </p>
             </div>
