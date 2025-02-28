@@ -14,7 +14,7 @@ const Reciept = () => {
 
   return (
     <div
-      className="flex justify-center items-center w-[370px] h-[485px] bg-gradient-to-b from-[#050717] to-[#292e43] rounded-[33px] overflow-hidden"
+      className="flex justify-center items-center w-[370px] h-[485px] bg-gradient-to-t from-[#050717] to-[#292e43] rounded-[33px] overflow-hidden"
       onMouseOver={() => {
         isHovered(true);
       }}
@@ -22,21 +22,7 @@ const Reciept = () => {
         isHovered(false);
       }}
     >
-      <div className="flex flex-col items-center w-[369px] h-[483.5px] bg-gradient-to-b from-[#010414] to-[#0F1026] rounded-[33px] overflow-hidden">
-        <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px]">
-          <motion.div
-            className="flex items-center justify-center"
-            animate={{
-              y: hovered ? 0 : -130,
-            }}
-            transition={{
-              duration: 1.5,
-              ease: "easeInOut",
-            }}
-          >
-            <Slip />
-          </motion.div>
-        </div>
+      <div className="flex flex-col items-center w-[369px] h-[483.5px] bg-gradient-to-t from-[#010414] to-[#0F1026] rounded-[33px] overflow-hidden">
         <div className="flex flex-col items-center justify-center relative w-full top-10 gap-1 cursor-default">
           <motion.h2
             className="font-sf text-[22px]"
@@ -62,6 +48,9 @@ const Reciept = () => {
           >
             {description}
           </motion.p>
+        </div>
+        <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px]">
+          {/*  */}
         </div>
       </div>
     </div>

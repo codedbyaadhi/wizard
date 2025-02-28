@@ -6,11 +6,11 @@ import Particles from "@/app/components/particles/particles";
 const Ellipse = () => {
   return (
     <div className="relative w-full h-[1895px] overflow-hidden bg-[#040313]">
-      <Particles id="tsparticles" />
+      {/* <Particles id="tsparticles" /> */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
           className="flex items-center justify-center w-[500px] h-[500px] rounded-full bg-gradient-to-b from-[#1e2f5b8b] via-[#040313] to-[#040313] relative top-[400px] scale-[5] overflow-hidden shadow-md"
-          style={{ boxShadow: "0 0 12px 10px #0A032C" }}
+          style={{ boxShadow: "0 0 12px 10px #0F092E" }}
         >
           <motion.div
             className="absolute flex items-center justify-center"
