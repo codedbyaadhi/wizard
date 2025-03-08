@@ -1,19 +1,19 @@
 "use client";
-import Keyboard from "@/app/components/keyboard/Keyboard";
 import React, { useState } from "react";
 import { useTextScramble } from "@/hooks/useTextScramble";
 import { motion } from "motion/react";
+import Commands from "../../commands/Commands";
 
 const Community = () => {
   const [hovered, isHovered] = useState(false);
-  const title = useTextScramble("Broad Community Range", hovered);
+  const title = useTextScramble("Meet your community", hovered);
   const description = useTextScramble(
-    "Join a global community where your voice matters and connect with developers worldwide.",
+    "Complete any action in seconds with the global command menu.",
     hovered
   );
   return (
     <div
-      className="flex justify-center items-center w-[860px] h-[485px] bg-gradient-to-t from-[#050717] to-[#292e43] rounded-[33px]"
+      className="flex justify-center items-center w-[860px] h-[485px] bg-gradient-to-t from-[#050717] to-[#292e43] rounded-[33px] overflow-hidden"
       onMouseOver={() => {
         isHovered(true);
       }}

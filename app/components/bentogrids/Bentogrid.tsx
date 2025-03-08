@@ -1,7 +1,7 @@
 import React from "react";
 import Flexibility from "./grids/keyboard/Flexiblity";
 import Reciept from "@/app/components/bentogrids/grids/reciept/Reciept";
-import Community from "./community/Community";
+import Community from "@/app/components/bentogrids/grids/community/Community";
 import Payment from "./grids/payment/Payment";
 
 const Bentogrid = () => {

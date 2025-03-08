@@ -23,7 +23,7 @@ const Payment = () => {
     >
       <div className="flex flex-col items-center w-[369px] h-[483.5px] bg-gradient-to-b from-[#030115] to-[#0E0C20] rounded-[33px] overflow-hidden">
         {/* Card animation wrapper */}
-        <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px] relative cursor-pointer">
+        <div className="flex leading-tight w-full items-center justify-center h-[325px] overflow-hidden rounded-t-[33px] relative">
           {/* Overflow hidden layer */}
           <div className="absolute inset-0 z-10 pointer-events-none" />
 
